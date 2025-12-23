@@ -3,38 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Automobile ECU Segmentation</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="os.css">
 </head>
 <body>
 
 <div class="container">
-    <h1>Automobile ECU Segmentation</h1>
-    <p>Segmentation and Multilevel Segmentation Demonstration</p>
+    <h1>🚗 Automobile ECU Segmentation</h1>
+    <p class="subtitle">Segmentation & Multilevel Segmentation Demonstration</p>
 
-    <label>Select Segment:</label>
     <select id="segment">
-        <option value="">Select</option>
-        <option value="code">Code</option>
-        <option value="data">Data</option>
-        <option value="stack">Stack</option>
-        <option value="io">I/O</option>
+        <option value="">Select Segment</option>
+        <option value="code">Code Segment</option>
+        <option value="data">Data Segment</option>
+        <option value="stack">Stack Segment</option>
+        <option value="io">I/O Segment</option>
     </select>
 
-    <label>Select Sub-Segment (Data only):</label>
     <select id="subsegment">
-        <option value="">None</option>
-        <option value="sensor">Sensor</option>
-        <option value="diagnostic">Diagnostic</option>
+        <option value="">Select Sub-Segment (Data Only)</option>
+        <option value="sensor">Sensor Data</option>
+        <option value="diagnostic">Diagnostic Data</option>
     </select>
 
-    <label>Enter Offset:</label>
-    <input type="number" id="offset">
+    <input type="number" id="offset" placeholder="Enter Offset" min="0">
 
     <button id="translateBtn">Translate Address</button>
 
-    <div id="output"></div>
+    <div id="output" class="result"></div>
+
+    <div class="memory">
+        <h3>📊 ECU Memory Layout</h3>
+        <div class="segment">Code Segment → Base: 1000 | Limit: 500</div>
+        <div class="segment">Data Segment → Base: 2000 | Limit: 400</div>
+        <div class="segment">Stack Segment → Base: 3000 | Limit: 300</div>
+        <div class="segment">I/O Segment → Base: 4000 | Limit: 200</div>
+    </div>
 </div>
 
-<script src="script.js"></script>
+<!-- JS must be LAST -->
+<script src="java.js"></script>
 </body>
 </html>
