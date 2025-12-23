@@ -1,4 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Automobile ECU Segmentation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-git add index.html
-git commit -m "Added HTML structure for ECU segmentation interface"
-git push
+<div class="container">
+    <h1>Automobile ECU Segmentation</h1>
+    <p>Segmentation and Multilevel Segmentation Demonstration</p>
+
+    <label>Select Segment:</label>
+    <select id="segment">
+        <option value="">Select</option>
+        <option value="code">Code</option>
+        <option value="data">Data</option>
+        <option value="stack">Stack</option>
+        <option value="io">I/O</option>
+    </select>
+
+    <label>Select Sub-Segment (Data only):</label>
+    <select id="subsegment">
+        <option value="">None</option>
+        <option value="sensor">Sensor</option>
+        <option value="diagnostic">Diagnostic</option>
+    </select>
+
+    <label>Enter Offset:</label>
+    <input type="number" id="offset">
+
+    <button id="translateBtn">Translate Address</button>
+
+    <div id="output"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
